@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="description" content="Diversity : Various unrelated web-apps">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/esoteric.css">
+    <script type="text/javascript" src="scripts/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="scripts/esoteric.js"></script>
+    <script type="text/javascript" src="scripts/esoteric-brainfuck.js"></script>
+    <title>Brainfuck interpreter</title>
+</head>
+<body>
+<div class="header">
+    <div class="map_button">
+        <img src="img/map.png">
+    </div>
+    <div class="title">
+        Esoteric languages interpreter
+    </div>
+</div>
+<div class="content">
+    <div class="left_area">
+        <div class="text_editor">
+            <label class="label_up animated" id="editor_label">Text editor</label>
+            <textarea class="animated" id="editor" cols="48" rows="10"></textarea> <br>
+            <button class="animated" id="run_button" onclick="run()">Run</button>
+            <button class="animated" id="pause_button" onclick="pause()">Pause</button>
+            <button class="animated" id="stop_button" onclick="stop()">Stop</button>
+            <br><br>
+        </div>
+        <div class="input">
+            <label class="label_up label_disabled animated" id="read_data_label">Read data</label>
+            <textarea class="animated" id="read_data" cols="48" rows="3" contenteditable="false" readonly disabled></textarea>
+            <textarea class="animated" id="buffer_data" cols="48" rows="3"></textarea>
+            <label class="label_down animated" id="buffer_data_label">Buffer data</label>
+        </div>
+        <br>
+        <div class="output">
+            <label class="label_up label_disabled animated" id="output_window_label">Output</label>
+            <textarea class="animated" id="output_window" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
+        </div>
+    </div>
+    <div class="right_area">
+        Language
+        <select data-toggle="select">
+            <option value="0">Brainfuck</option>
+            <option value="1">Moo (Unavailable)</option>
+            <option value="2">HQ9+ (Unavailable)</option>
+            <option value="3">Petooh (Unavailable)</option>
+        </select>
+        <br><br>
+        <br><br>
+        Values table
+        <table id="values0">
+            <tr>
+                <td>Pos</td>
+                <td id="move_pos_left" rowspan="3" onclick="interpreter_command(POS_MOVE_LEFT)"> < </td>
+                <td id="pos0"></td>
+                <td id="pos1"></td>
+                <td id="pos2"></td>
+                <td id="pos3"></td>
+                <td id="pos4"></td>
+                <td id="pos5"></td>
+                <td id="pos6"></td>
+                <td id="move_pos_right" rowspan="3" onclick="interpreter_command(POS_MOVE_RIGHT)"> > </td>
+            </tr>
+            <tr>
+                <td>Dec</td>
+                <td id="dec0"></td>
+                <td id="dec1"></td>
+                <td id="dec2"></td>
+                <td id="dec3"></td>
+                <td id="dec4"></td>
+                <td id="dec5"></td>
+                <td id="dec6"></td>
+            </tr>
+            <tr>
+                <td>Chr</td>
+                <td id="chr0"></td>
+                <td id="chr1"></td>
+                <td id="chr2"></td>
+                <td id="chr3"></td>
+                <td id="chr4"></td>
+                <td id="chr5"></td>
+                <td id="chr6"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
