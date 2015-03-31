@@ -10,12 +10,12 @@ textarea[disabled] {color: #ffffff;!important;}
     color 0.16s ease-out;
 }
 .animated:after {
-    transition: background-color 0.16s ease-out,
+    transition: border-color 0.16s ease-out,
     background 0.16s ease-out,
     color 0.16s ease-out;
 }
 .animated:before {
-    transition: background-color 0.16s ease-out,
+    transition: border-color 0.16s ease-out,
     background 0.16s ease-out,
     color 0.16s ease-out;
 }
@@ -77,6 +77,7 @@ textarea[disabled] {color: #ffffff;!important;}
 
 .label_up {
     display: block;
+    line-height: 22px;
     float: left;
     background-color: #16a085;
     height: 20px;
@@ -116,12 +117,20 @@ textarea[disabled] {color: #ffffff;!important;}
     border-bottom-color: #7f8c8d;
 }
 
+h3 {
+    font-size: 12pt;
+    padding: 0;
+    margin: 5px 0 5px 0;
+}
+
 label {
     position: absolute;
     padding-left: 5px;
     color: #ffffff;
-    font-size: 11pt;
+    font-size: 8pt;
+    font-weight: bold;
     text-align: center;
+    line-height: 20px;
     height: 0;
     width: auto;
 }
@@ -132,7 +141,7 @@ textarea {
     outline: none;
     color: #ffffff;
     font-size: 12pt;
-    border: 4px #16a085 solid;
+    border: 5px #16a085 solid;
     max-width: 100%;
     -webkit-text-fill-color: #ffffff;
     display: block;
@@ -141,7 +150,7 @@ textarea {
 textarea:disabled {
     color: #ffffff;
     background-color: #95a5a6;
-    border: 4px #7f8c8d solid;
+    border: 5px #7f8c8d solid;
     -webkit-text-fill-color: #ffffff;
 }
 
@@ -175,20 +184,24 @@ select {
     padding: 7px 25px 7px 7px;
     width: auto;
     font-size: 12pt;
+    min-width: 150px;
 
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 3px #16a085 solid;
+    border-radius: 3px;
     outline: 0;
 }
 
 table {
     color: #ffffff;
     background-color: #1abc9c;
-    border: 3px #16a085 solid;
-    padding: 5px;
+    /*border: 3px #16a085 solid;*/
+    /*padding: 5px;*/
     border-collapse: collapse;
+    margin-top: 18px;
+    display: inline-block;
 
     transition: border-color 0.16s ease-out,
     background-color 0.16s ease-out,
@@ -244,8 +257,13 @@ td {
     padding-left: 10px;
 }
 
+
+#eob_action_selector {
+    padding-left: 10px;
+}
+
 #read_data {
-    margin-bottom: -2px;
+    margin-bottom: 2px;
     padding-bottom: 0;
     color: #7f8c8d;
 }

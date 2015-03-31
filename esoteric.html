@@ -5,9 +5,11 @@
     <meta name="description" content="Diversity : Various unrelated web-apps">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/esoteric.css">
-    <script type="text/javascript" src="scripts/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
     <script type="text/javascript" src="scripts/esoteric.js"></script>
     <script type="text/javascript" src="scripts/esoteric-brainfuck.js"></script>
+    <script type="text/javascript" src="scripts/esoteric-ook.js"></script>
+    <script type="text/javascript" src="scripts/esoteric-hq9plus.js"></script>
     <title>Brainfuck interpreter</title>
 </head>
 <body>
@@ -22,7 +24,7 @@
 <div class="content">
     <div class="left_area">
         <div class="text_editor">
-            <label class="label_up animated" id="editor_label">Text editor</label>
+            <label class="label_up animated" id="editor_label">TEXT EDITOR</label>
             <textarea class="animated" id="editor" cols="48" rows="10"></textarea> <br>
             <button class="animated" id="run_button" onclick="run()">Run</button>
             <button class="animated" id="pause_button" onclick="pause()">Pause</button>
@@ -30,28 +32,35 @@
             <br><br>
         </div>
         <div class="input">
-            <label class="label_up label_disabled animated" id="read_data_label">Read data</label>
+            <label class="label_up label_disabled animated" id="read_data_label">READ DATA</label>
             <textarea class="animated" id="read_data" cols="48" rows="3" contenteditable="false" readonly disabled></textarea>
             <textarea class="animated" id="buffer_data" cols="48" rows="3"></textarea>
-            <label class="label_down animated" id="buffer_data_label">Buffer data</label>
+            <label class="label_down animated" id="buffer_data_label">INPUT BUFFER</label>
         </div>
         <br>
         <div class="output">
-            <label class="label_up label_disabled animated" id="output_window_label">Output</label>
+            <label class="label_up label_disabled animated" id="output_window_label">OUTPUT</label>
             <textarea class="animated" id="output_window" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
         </div>
     </div>
     <div class="right_area">
-        Language
-        <select data-toggle="select">
-            <option value="0">Brainfuck</option>
-            <option value="1">Moo (Unavailable)</option>
-            <option value="2">HQ9+ (Unavailable)</option>
-            <option value="3">Petooh (Unavailable)</option>
+        <h3>Language</h3>
+        <select id="language_selector" data-toggle="select">
+            <option value="BRAINFUCK">Brainfuck</option>
+            <option value="1" disabled>Moo</option>
+            <option value="HQ9PLUS">HQ9+</option>
+            <option value="3" disabled>Petooh</option>
+            <option value="OOK">Ook!</option>
+        </select>
+        <br><br>
+        <h3>End of buffer action</h3>
+        <select id="eob_action_selector" data-toggle="select">
+            <option value="0">Send EOF</option>
+            <option value="1">Pause</option>
         </select>
         <br><br>
         <br><br>
-        Values table
+        <label class="label_up label_disabled animated" id="values0_label">VALUES TABLE</label>
         <table id="values0">
             <tr>
                 <td>Pos</td>

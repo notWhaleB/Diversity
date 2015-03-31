@@ -11,7 +11,7 @@ var interpreterMode;
 var iterCount;
 var refreshCount;
 
-var BRAINFUCK = 1, MOO = 2, PETOOH = 3;
+var BRAINFUCK = 1, MOO = 2, PETOOH = 3, OOK = 4, HQ9PLUS = 5;
 var DEBUG = 1, NORMAL = 2, PERFORMANCE = 3;
 var RUN = 1, PAUSE = 2, STOP = 3, STOPPED = 4, POS_MOVE_LEFT = 5, POS_MOVE_RIGHT = 6;
 
@@ -38,7 +38,6 @@ jQuery.fn.putCursorAtEnd = function() {
         this.scrollTop = 999999;
 
     });
-
 };
 
 function init() {
@@ -57,7 +56,13 @@ function init() {
 }
 
 function config_interpreter() {
-    interpreterLanguage = BRAINFUCK;
+    var lang = $("#language_selector").val();
+    switch (lang) {
+        case "BRAINFUCK": interpreterLanguage = BRAINFUCK; break;
+        case "OOK": interpreterLanguage = OOK; break;
+        case "HQ9PLUS": interpreterLanguage = HQ9PLUS; break;
+    }
+
     interpreterMode = NORMAL;
     script = $("#editor").val();
     refreshCount = 10000;
@@ -119,6 +124,14 @@ function interpreter() {
         case BRAINFUCK: {
             brainfuck_bytecode_translator();
             brainfuck_interpreter();
+        } break;
+        case OOK: {
+            ook_to_bf_bytecode_translator();
+            brainfuck_interpreter();
+        } break;
+        case HQ9PLUS: {
+            hq9plus_bytecode_translator();
+            hq9plus_interpreter();
         } break;
     }
 }
