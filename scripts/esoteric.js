@@ -79,6 +79,7 @@ function update_ui_state() {
             $("#buffer_data").prop("disabled", true);
             $("#buffer_data_label").addClass("label_disabled");
             $("#values0").addClass("table_disabled");
+            $("#values0_label").addClass("label_disabled");
             $("tr").addClass("trtd_disabled");
             $("td").addClass("trtd_disabled");
         } break;
@@ -91,6 +92,7 @@ function update_ui_state() {
             $("#buffer_data").prop("disabled", false);
             $("#buffer_data_label").removeClass("label_disabled");
             $("#values0").removeClass("table_disabled");
+            $("#values0_label").removeClass("label_disabled");
             $("tr").removeClass("trtd_disabled");
             $("td").removeClass("trtd_disabled");
         } break;
@@ -103,6 +105,7 @@ function update_ui_state() {
             $("#buffer_data").prop("disabled", false);
             $("#buffer_data_label").removeClass("label_disabled");
             $("#values0").addClass("table_disabled");
+            $("#values0_label").addClass("label_disabled");
             $("tr").addClass("trtd_disabled");
             $("td").addClass("trtd_disabled");
         } break;

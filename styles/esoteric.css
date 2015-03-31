@@ -197,7 +197,7 @@ select {
 table {
     color: #ffffff;
     background-color: #1abc9c;
-    /*border: 3px #16a085 solid;*/
+    border: 3px #16a085 solid;
     /*padding: 5px;*/
     border-collapse: collapse;
     margin-top: 18px;
