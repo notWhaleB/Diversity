@@ -13,7 +13,7 @@ body {
 .title {
     line-height: 50px;
     width: auto;
-    margin: auto;
+    margin-left: 50px;
     text-align: center;
     background-color: inherit;
     color: white;
