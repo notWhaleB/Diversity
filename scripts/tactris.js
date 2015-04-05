@@ -29,8 +29,12 @@ $(document).ready(function(){
         if (event.which == 1) {
             mouse_pressed = false;
             selected_cells_remover = setInterval(function() {
-                cells[cell_select_calls[0]].removeClass("cell-selected");
-                cell_select_calls.shift();
+                if (cell_select_calls.length != 0) {
+                    cells[cell_select_calls[0]].removeClass("cell-selected");
+                    cell_select_calls.shift();
+                } else {
+                    clearTimeout(selected_cells_remover);
+                }
             }, 500);
         }
     });
