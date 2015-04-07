@@ -8,12 +8,19 @@ var loopStack;
 var interpreterState;
 var interpreterLanguage;
 var interpreterMode;
+var interpreterEOBAction;
 var iterCount;
 var refreshCount;
+
+var buffer_data;
+var read_data;
+var output_window;
+var debug_log_output;
 
 var BRAINFUCK = 1, MOO = 2, PETOOH = 3, OOK = 4, HQ9PLUS = 5;
 var DEBUG = 1, NORMAL = 2, PERFORMANCE = 3;
 var RUN = 1, PAUSE = 2, STOP = 3, STOPPED = 4, POS_MOVE_LEFT = 5, POS_MOVE_RIGHT = 6;
+var EOB_EOF = 1, EOB_PAUSE = 2;
 
 jQuery.fn.putCursorAtEnd = function() {
 
@@ -63,9 +70,25 @@ function config_interpreter() {
         case "HQ9PLUS": interpreterLanguage = HQ9PLUS; break;
     }
 
-    interpreterMode = NORMAL;
+    var mode = $("#interpreter_mode").val();
+    switch (mode) {
+        case "NORMAL": {
+            interpreterMode = NORMAL;
+            refreshCount = 10000;
+        } break;
+        case "DEBUG": {
+            interpreterMode = DEBUG;
+            refreshCount = 10;
+        } break;
+    }
+
+    var eob = $("#eob_action_selector").val();
+    switch(eob) {
+        case "EOF": interpreterEOBAction = EOB_EOF; break;
+        case "PAUSE": interpreterEOBAction = EOB_PAUSE; break;
+    }
+
     script = $("#editor").val();
-    refreshCount = 10000;
 }
 
 function update_ui_state() {
@@ -122,9 +145,15 @@ function update_debug_table(curPos) {
     }
 }
 
+function debug_log(output) {
+    debug_log_output.val(debug_log_output.val() + "\n" + output);
+    debug_log_output.putCursorAtEnd();
+}
+
 function interpreter() {
     switch(interpreterLanguage) {
         case BRAINFUCK: {
+            bytecode = [];
             brainfuck_bytecode_translator();
             brainfuck_interpreter();
         } break;
@@ -147,19 +176,27 @@ function interpreter_command(command) {
                 config_interpreter();
             }
             interpreterState = RUN;
+            config_interpreter();
             update_ui_state();
+
             timer = setTimeout(interpreter, 0);
+
+            debug_log("Interpreter started");
         } break;
         case PAUSE: {
             interpreterState = PAUSE;
             update_ui_state();
             update_debug_table(arrPos);
+
+            debug_log("Interpreter paused");
         } break;
         case STOP: {
             init();
             interpreterState = STOP;
             update_ui_state();
             update_debug_table(arrPos);
+
+            debug_log("Interpreter stopped\n");
         } break;
         case POS_MOVE_LEFT: {
             update_debug_table(Number($("#pos3").text()) - 1);
@@ -184,5 +221,11 @@ function stop() {
 
 
 $(document).ready(function(){
+    buffer_data = $("#buffer_data");
+    read_data = $("#read_data");
+    output_window = $("#output_window");
+    debug_log_output = $("#debug_log");
+
+    debug_log("Interpreter ready");
     interpreter_command(STOP);
 });

@@ -5,6 +5,7 @@ var cell_select_calls = [];
 var mouse_pressed = false;
 var button;
 var selected_cells_remover;
+var shapeforms = [];
 
 $(document).ready(function(){
     for (var i = 0; i != 10; ++i) {
@@ -38,7 +39,28 @@ $(document).ready(function(){
             }, 500);
         }
     });
+
+    $.ajax({
+        url: "data/tactris_shapeforms",
+        success: function(data) {
+            for (var i = 0, j = 0; i != 9; ++i) {
+                var buff_0 = [];
+                for (var p = 0; p != 4; ++p) {
+                    var buff_1 = [];
+                    for (var q = 0; q != 4; ++q, ++j) {
+                        buff_1.push(parseInt(data.charAt(j), 10));
+                    }
+                    buff_0.push(buff_1);
+                }
+                shapeforms.push(buff_0);
+            }
+        }
+    });
 });
+
+function offline_game_processor() {
+
+}
 
 function cell_hover(id) {
     var cur_id = parseInt(id, 10);

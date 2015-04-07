@@ -40,26 +40,36 @@
         <br>
         <div class="output">
             <label class="label_up label_disabled animated" id="output_window_label">OUTPUT</label>
-            <textarea class="animated" id="output_window" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
+            <textarea id="output_window" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
         </div>
     </div>
     <div class="right_area">
-        <h3>Language</h3>
-        <select id="language_selector" data-toggle="select">
-            <option value="BRAINFUCK">Brainfuck</option>
-            <option value="1" disabled>Moo</option>
-            <option value="HQ9PLUS">HQ9+</option>
-            <option value="3" disabled>Petooh</option>
-            <option value="OOK">Ook!</option>
-        </select>
+        <div class="selectors_wrapper">
+            <h3>Language</h3>
+            <select id="language_selector" data-toggle="select">
+                <option value="BRAINFUCK">Brainfuck</option>
+                <option value="1" disabled>Moo</option>
+                <option value="HQ9PLUS">HQ9+</option>
+                <option value="3" disabled>Petooh</option>
+                <option value="OOK">Ook!</option>
+            </select>
+        </div>
+        <div class="selectors_wrapper">
+            <h3> Interpreter mode </h3>
+            <select id="interpreter_mode" data-toggle="select">
+                <option value="NORMAL">Normal</option>
+                <option value="DEBUG">Debug</option>
+            </select>
+        </div>
+        <div class="selectors_wrapper">
+            <h3>End of buffer action</h3>
+            <select id="eob_action_selector" data-toggle="select">
+                <option value="EOF">Send EOF</option>
+                <option value="PAUSE">Pause</option>
+            </select>
+        </div>
         <br><br>
-        <h3>End of buffer action</h3>
-        <select id="eob_action_selector" data-toggle="select">
-            <option value="0">Send EOF</option>
-            <option value="1">Pause</option>
-        </select>
-        <br><br>
-        <br><br>
+        <h3>Debug</h3>
         <label class="label_up label_disabled animated" id="values0_label">VALUES TABLE</label>
         <table id="values0">
             <tr>
@@ -95,6 +105,9 @@
                 <td id="chr6"></td>
             </tr>
         </table>
+        <br><br>
+        <label class="label_up label_disabled" id="debug_log_label">DEBUG LOG</label>
+        <textarea id="debug_log" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
     </div>
 </div>
 </body>

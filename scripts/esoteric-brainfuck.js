@@ -22,18 +22,33 @@ function brainfuck_processor(instruction) {
         case BF_INC: {
             arr[arrPos]++;
             arr[arrPos] %= 256;
+
+            if (interpreterMode == DEBUG) debug_log("Cell #" + arrPos.toString() + " incremented, new value: " + arr[arrPos].toString());
         } break;
         case BF_DEC: {
             if (arr[arrPos] == 0)
                 arr[arrPos] = 256;
             arr[arrPos]--;
+            if (interpreterMode == DEBUG) debug_log("Cell #" + arrPos.toString() + " decremented, new value: " + arr[arrPos].toString());
         } break;
-        case BF_INCPTR: arrPos++; break;
-        case BF_DECPTR: arrPos--; break;
+        case BF_INCPTR: {
+            arrPos++;
+
+            if (interpreterMode == DEBUG) debug_log("Move '->' from cell #" + (arrPos - 1).toString() + " to cell #" + arrPos.toString());
+        } break;
+        case BF_DECPTR: {
+            arrPos--;
+
+            if (interpreterMode == DEBUG) debug_log("Move '<-' from cell #" + (arrPos + 1).toString() + " to cell #" + arrPos.toString());
+        } break;
         case BF_LOOPB: {
-            if (arr[arrPos] != 0)
+            if (interpreterMode == DEBUG) debug_log("Beginning of the loop, symbol #" + codePos.toString() + ", under cell #" + arrPos.toString());
+
+            if (arr[arrPos] != 0) {
                 loopStack.push(codePos);
-            else {
+
+                if (interpreterMode == DEBUG) debug_log("Cell value: " + arr[arrPos].toString() + " -- non-zero, entry into loop");
+            } else {
                 var stack = 1;
                 while (stack != 0 && codePos != bytecode.length) {
                     codePos++;
@@ -42,29 +57,47 @@ function brainfuck_processor(instruction) {
                     else if (bytecode[codePos] == BF_LOOPB)
                         stack++;
                 }
+                if (interpreterMode == DEBUG) debug_log("Cell value equal to zero, pass loop, move to symbol #" + codePos.toString());
             }
         } break;
         case BF_LOOPE: {
-            codePos = loopStack[loopStack.length - 1] - 1;
+            var newPos = loopStack[loopStack.length - 1] - 1;
+            if (interpreterMode == DEBUG) debug_log("End of the loop, symbol #" + codePos.toString() + ", move to beginning at symbol #" + newPos.toString());
+
+            codePos = newPos;
             loopStack.pop();
         } break;
         case BF_READ: {
-            var buffer_data = $("#buffer_data");
             if (buffer_data.val().length == 0) {
-                arr[arrPos] = 0;
+                switch (interpreterEOBAction) {
+                    case EOB_EOF: {
+                        arr[arrPos] = 0;
+
+                        if (interpreterMode == DEBUG) debug_log("Read data, buffer is empty, send EOF");
+                    } break;
+                    case EOB_PAUSE: {
+                        if (interpreterMode == DEBUG) debug_log("Read data, buffer is empty, call pause, waiting for input");
+                        codePos--;
+                        interpreter_command(PAUSE);
+                    } break;
+                }
             } else {
-                var read_data = $("#read_data");
                 arr[arrPos] = buffer_data.val().charCodeAt(0);
                 read_data.val(read_data.val() + String.fromCharCode(arr[arrPos]));
                 buffer_data.val(buffer_data.val().slice(1));
+
+                if (interpreterMode == DEBUG) debug_log("Read char '" + String.fromCharCode(arr[arrPos]) + "' (char code " + arr[arrPos].toString() + "), write to cell #" + arrPos.toString());
             }
         } break;
         case BF_WRITE: {
-            var output_window = $("#output_window");
             output_window.val(output_window.val() + String.fromCharCode(arr[arrPos]));
+
+            if (interpreterMode == DEBUG) debug_log("Write to output from cell #" + arrPos.toString() + ", char '" + String.fromCharCode(arr[arrPos]) + "' (char code " + arr[arrPos].toString() + ")");
         } break;
         case BF_BREAKPOINT: {
             interpreter_command(PAUSE);
+
+            if (interpreterMode == DEBUG) debug_log("Breakout point found")
         } break;
     }
 }
@@ -81,7 +114,7 @@ function brainfuck_interpreter() {
         iterCount++;
     }
 
-    $("#output_window").putCursorAtEnd();
+    output_window.putCursorAtEnd();
 
     if (interpreterState == RUN && codePos < bytecode.length) {
         timer = setTimeout(brainfuck_interpreter, 0);
