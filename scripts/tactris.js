@@ -84,8 +84,8 @@ function init_fields() {
         }
     }
 
-    current_shapeform_id = get_random_int(0, 16);
-    next_shapeform_id = get_random_int(0, 16);
+    current_shapeform_id = get_random_int(0, 18);
+    next_shapeform_id = get_random_int(0, 18);
 }
 
 function set_event_listeners() {
@@ -153,7 +153,7 @@ function load_shapeforms() {
     $.ajax({
         url: "data/tactris_shapeforms",
         success: function(data) {
-            for (var i = 0, j = 0; i != 17; ++i) {
+            for (var i = 0, j = 0; i != 19; ++i) {
                 var buff_0 = [];
                 var delta = [];
                 for (var p = 0; p != 4; ++p) {
