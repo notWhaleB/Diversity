@@ -19,7 +19,9 @@
     </div>
 </div>
 <div class="content">
-    <table id="gamefield">
+    <div id="gamefield-wrapper">
+        <div id="score-panel">0</div>
+        <table id="gamefield">
         <tr>
             <td class="cell" id="cell_00" onmousedown="cell_selected('00')" onmouseout="cell_leave('00')" onmouseover="cell_hover('00')"></td>
             <td class="cell" id="cell_01" onmousedown="cell_selected('01')" onmouseout="cell_leave('01')" onmouseover="cell_hover('01')"></td>
@@ -141,6 +143,65 @@
             <td class="cell" id="cell_99" onmousedown="cell_selected('99')" onmouseout="cell_leave('99')" onmouseover="cell_hover('99')"></td>
         </tr>
     </table>
+        <div id="right-panel">
+            <br><br>
+            <div class="label">Current shape</div>
+            <table class="shape-preview" id="current-preview">
+                <tr>
+                    <td class="preview-cell" id="cur-pre-cell_00"></td>
+                    <td class="preview-cell" id="cur-pre-cell_01"></td>
+                    <td class="preview-cell" id="cur-pre-cell_02"></td>
+                    <td class="preview-cell" id="cur-pre-cell_03"></td>
+                </tr>
+                <tr>
+                    <td class="preview-cell" id="cur-pre-cell_10"></td>
+                    <td class="preview-cell" id="cur-pre-cell_11"></td>
+                    <td class="preview-cell" id="cur-pre-cell_12"></td>
+                    <td class="preview-cell" id="cur-pre-cell_13"></td>
+                </tr>
+                <tr>
+                    <td class="preview-cell" id="cur-pre-cell_20"></td>
+                    <td class="preview-cell" id="cur-pre-cell_21"></td>
+                    <td class="preview-cell" id="cur-pre-cell_22"></td>
+                    <td class="preview-cell" id="cur-pre-cell_23"></td>
+                </tr>
+                <tr>
+                    <td class="preview-cell" id="cur-pre-cell_30"></td>
+                    <td class="preview-cell" id="cur-pre-cell_31"></td>
+                    <td class="preview-cell" id="cur-pre-cell_32"></td>
+                    <td class="preview-cell" id="cur-pre-cell_33"></td>
+                </tr>
+            </table>
+            <br><br>
+            <div class="label">Next shape</div>
+            <table class="shape-preview" id="next-preview">
+                <tr>
+                    <td class="preview-cell" id="next-pre-cell_00"></td>
+                    <td class="preview-cell" id="next-pre-cell_01"></td>
+                    <td class="preview-cell" id="next-pre-cell_02"></td>
+                    <td class="preview-cell" id="next-pre-cell_03"></td>
+                </tr>
+                <tr>
+                    <td class="preview-cell" id="next-pre-cell_10"></td>
+                    <td class="preview-cell" id="next-pre-cell_11"></td>
+                    <td class="preview-cell" id="next-pre-cell_12"></td>
+                    <td class="preview-cell" id="next-pre-cell_13"></td>
+                </tr>
+                <tr>
+                    <td class="preview-cell" id="next-pre-cell_20"></td>
+                    <td class="preview-cell" id="next-pre-cell_21"></td>
+                    <td class="preview-cell" id="next-pre-cell_22"></td>
+                    <td class="preview-cell" id="next-pre-cell_23"></td>
+                </tr>
+                <tr>
+                    <td class="preview-cell" id="next-pre-cell_30"></td>
+                    <td class="preview-cell" id="next-pre-cell_31"></td>
+                    <td class="preview-cell" id="next-pre-cell_32"></td>
+                    <td class="preview-cell" id="next-pre-cell_33"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>
