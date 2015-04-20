@@ -170,6 +170,34 @@ html, body {
     border-top-color: #ff4500;
 }
 
+.block-value-9 {
+    background-image: url("../img/png/beex2.png");
+    background-size: 45px 45px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: #ff4500;
+}
+.block-value-9:before {
+    border-bottom-color: #ff4500;
+}
+.block-value-9:after {
+    border-top-color: #ff4500;
+}
+
+.block-value-10 {
+    background-image: url("../img/png/beex4.png");
+    background-size: 45px 45px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: #ff4500;
+}
+.block-value-10:before {
+    border-bottom-color: #ff4500;
+}
+.block-value-10:after {
+    border-top-color: #ff4500;
+}
+
 .cell {
     width: 84px;
     height: 45px;

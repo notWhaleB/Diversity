@@ -110,7 +110,7 @@ function move_blocks(direction) {
             add_new_block();
             add_new_block();
             ready = true;
-        }, 600);
+        }, 700);
     }
 }
 
@@ -157,7 +157,7 @@ $(document).ready(function() {
     setTimeout(function() {
         add_new_block();
         add_new_block();
-    }, 600);
+    }, 700);
 
     set_event_listeners();
 
