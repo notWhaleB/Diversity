@@ -59,7 +59,7 @@ html, body {
 
 .block-value-1 {
     background-image: url("../img/png/flower155.png");
-    background-position-x: 50%;
+    background-position: center;
     background-size: 45px 45px;
     background-origin: content-box;
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@ html, body {
 .block-value-2 {
     background-image: url("../img/png/water86.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ffe71e;
 }
@@ -89,7 +89,7 @@ html, body {
 .block-value-3 {
     background-image: url("../img/png/water86x2.png");
     background-size: 65px 65px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ffe71e;
 }
@@ -103,7 +103,7 @@ html, body {
 .block-value-4 {
     background-image: url("../img/png/water86x4.png");
     background-size: 55px 55px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ffe71e;
 }
@@ -117,7 +117,7 @@ html, body {
 .block-value-5 {
     background-image: url("../img/png/hexagon7.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ff8c00;
 }
@@ -131,7 +131,7 @@ html, body {
 .block-value-6 {
     background-image: url("../img/png/cells3.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ff8c00;
 }
@@ -145,7 +145,7 @@ html, body {
 .block-value-7 {
     background-image: url("../img/png/cells3x3.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ff8c00;
 }
@@ -159,7 +159,7 @@ html, body {
 .block-value-8 {
     background-image: url("../img/png/bee.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ff4500;
 }
@@ -173,7 +173,7 @@ html, body {
 .block-value-9 {
     background-image: url("../img/png/beex2.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ff4500;
 }
@@ -187,7 +187,7 @@ html, body {
 .block-value-10 {
     background-image: url("../img/png/beex4.png");
     background-size: 45px 45px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ff4500;
 }
@@ -196,6 +196,34 @@ html, body {
 }
 .block-value-10:after {
     border-top-color: #ff4500;
+}
+
+.block-value-11 {
+    background-image: url("../img/png/beequeen.png");
+    background-size: 45px 45px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0fff0;
+}
+.block-value-11:before {
+    border-bottom-color: #f0fff0;
+}
+.block-value-11:after {
+    border-top-color: #f0fff0;
+}
+
+.block-value-12 {
+    background-image: url("../img/png/beequeen&drone.png");
+    background-size: 55px 55px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0fff0;
+}
+.block-value-12:before {
+    border-bottom-color: #f0fff0;
+}
+.block-value-12:after {
+    border-top-color: #f0fff0;
 }
 
 .cell {

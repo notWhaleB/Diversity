@@ -19,6 +19,7 @@ var blocks = [];
 var blocks_DOM = [];
 var removed_blocks = [];
 var ready = false;
+var spawn_num = 2;
 
 function get_random_int(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -27,7 +28,7 @@ function get_random_int(min, max) {
 function set_event_listeners() {
     addEventListener("keypress", function(event) {
         if (ready) {
-            switch (event.keyCode) {
+            switch (event.which) {
                 case 119: move_blocks(0); break;
                 case 101: move_blocks(1); break;
                 case 100: move_blocks(2); break;
@@ -76,6 +77,9 @@ function move_blocks(direction) {
                         field[j] = field[k];
                         blocks_DOM[field[k]].removeClass("block-value-" + blocks[field[k]]);
                         blocks[field[k]]++;
+                        if (blocks[field[k]] == 10) {
+                            spawn_num = 1;
+                        }
                         blocks_DOM[field[k]].addClass("block-value-" + blocks[field[k]]);
                         field[k] = 0;
                     } else if (field[j] == 0) {
@@ -108,7 +112,9 @@ function move_blocks(direction) {
         ready = false;
         setTimeout(function () {
             add_new_block();
-            add_new_block();
+            if (spawn_num == 2) {
+                add_new_block();
+            }
             ready = true;
         }, 700);
     }
