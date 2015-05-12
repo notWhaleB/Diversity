@@ -10,6 +10,6 @@ function foo() {
             for (var i = 0; i != json.data.length; ++i) {
                result_html += json.data[i] + "<br>";
             }
-            $("#wordscheat-results").append(result_html);
+            $("#wordscheat-results").html(result_html);
         });
 }
