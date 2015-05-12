@@ -1,0 +1,322 @@
+html, body {
+    background-color: #f8f8ff;
+}
+
+button {
+    cursor: pointer;
+}
+
+.header {
+    background-color: #1e90ff;
+}
+
+.content {
+    color: black;
+    display: block;
+    font-size: 14pt
+}
+
+#floodit-main-dialog-wrapper {
+    position: absolute;
+    /*border: solid 5px #ffffff;*/
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    height: 180px;
+    width: 300px;
+    margin: -90px auto auto -150px;
+}
+
+#floodit-configure-new-game-dialog-wrapper {
+    position: absolute;
+    /*border: solid 5px #ffffff;*/
+    text-align: center;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    height: 180px;
+    width: 300px;
+    margin: -90px auto auto -150px;
+}
+
+#floodit-wrapper {
+    display: block;
+    position: absolute;
+    text-align: center;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    height: 630px;
+    width: 490px;
+    margin: -300px auto auto -245px;
+}
+
+#floodit-game-wrapper {
+    display: block;
+    position: absolute;
+    text-align: center;
+    padding: 0;
+    background-color: #ccd3d8;
+    border: solid 5px #2172ff;
+    border-radius: 5px;
+    /*top: 50%;
+    left: 50%;*/
+    height: 564px;
+    width: 480px;
+    margin: auto;
+}
+
+#floodit-steps-counter {
+    position: absolute;
+    width: 490px;
+    color: #34495e;
+    font-size: 22pt;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto 0 auto;
+    bottom: 0;
+}
+
+.floodit-dialog-selector {
+    display: block;
+    position: relative;
+    color: #ffffff;
+    background-color: #1e90ff;
+    padding: 7px 25px 7px 7px;
+    font-size: 16pt;
+    width: 200px;
+    height: 70px;
+    margin: 16px auto 16px auto;
+
+
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 5px #2172ff solid;
+    border-radius: 3px;
+    outline: 0;
+}
+
+.floodit-dialog-button {
+    display: block;
+    position: relative;
+    background-color: transparent;
+    color: #2172ff;
+    margin: 16px auto 16px auto;
+
+    outline: none;
+    font-size: 16pt;
+    border: 5px #2172ff solid;
+    border-radius: 3px;
+
+    width: 200px;
+    height: 70px;
+}
+
+.floodit-dialog-button-white {
+    display: block;
+    position: relative;
+    background-color: transparent;
+    color: #ffffff;
+    margin: 16px auto 16px auto;
+
+    outline: none;
+    font-size: 16pt;
+    border: 5px #ffffff solid;
+    border-radius: 3px;
+
+    width: 200px;
+    height: 70px;
+}
+
+.floodit-dialog-button-white:hover {
+    background-color: #ffffff;
+    color: #1e90ff;
+}
+
+.floodit-dialog-button:hover:enabled {
+    background-color: #1e90ff;
+    color: #ffffff;
+}
+
+.floodit-dialog-button:disabled {
+    color: #7f8c8d;
+    border-color: #7f8c8d;
+}
+
+#floodit-gamefield-wrapper {
+    position: relative;
+    border-bottom: solid 5px #2172ff;
+    /*border-radius: 5px;*/
+    padding: 0;
+    margin: 0;
+    height: 480px;
+    width: 480px;
+}
+
+#floodit-gamefield {
+    position: relative;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 480px;
+    width: 480px;
+    float: left;
+    border-collapse: collapse;
+}
+
+.floodit-cell {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #ffffff;
+
+    transition: all 0.3s ease;
+}
+
+.floodit-circle-button {
+    display: inline-block;
+    position: relative;
+    color: #34495e;
+    font-size: 18pt;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none;
+
+    transition: all 0.2s ease;
+}
+
+#floodit-circle-button-0 {
+    background-color: #2ecc71;
+    border: solid 2px #ccd3d8;
+}
+#floodit-circle-button-0:hover {
+    background-color: #2ecc71;
+    border: solid 0 #ccd3d8;
+}
+#floodit-circle-button-0:active {
+    background-color: #27ae60;
+    border: solid 4px #2ecc71;
+}
+
+#floodit-circle-button-1 {
+    background-color: #3498db;
+    border: solid 2px #ccd3d8;
+}
+#floodit-circle-button-1:hover {
+    background-color: #3498db;
+    border: solid 0 #ccd3d8;
+}
+#floodit-circle-button-1:active {
+    background-color: #2980b9;
+    border: solid 4px #3498db;
+}
+
+#floodit-circle-button-2 {
+    background-color: #9b59b6;
+    border: solid 2px #ccd3d8;
+}
+#floodit-circle-button-2:hover {
+    background-color: #9b59b6;
+    border: solid 0 #ccd3d8;
+}
+#floodit-circle-button-2:active {
+    background-color: #8e44ad;
+    border: solid 4px #9b59b6;
+}
+
+#floodit-circle-button-3 {
+    background-color: #e74c3c;
+    border: solid 2px #ccd3d8;
+}
+#floodit-circle-button-3:hover {
+    background-color: #e74c3c;
+    border: solid 0 #ccd3d8;
+}
+#floodit-circle-button-3:active {
+    background-color: #c0392b;
+    border: solid 4px #e74c3c;
+}
+
+#floodit-circle-button-4 {
+    background-color: #f1c40f;
+    border: solid 2px #ccd3d8;
+}
+#floodit-circle-button-4:hover {
+    background-color: #f1c40f;
+    border: solid 0 #ccd3d8;
+}
+#floodit-circle-button-4:active {
+    background-color: #f39c12;
+    border: solid 4px #f1c40f;
+}
+
+#floodit-circle-button-5 {
+    background-color: #ecf0f1;
+    border: solid 2px #ccd3d8;
+}
+#floodit-circle-button-5:hover {
+    background-color: #ecf0f1;
+    border: solid 0 #ccd3d8;
+}
+#floodit-circle-button-5:active {
+    background-color: #bdc3c7;
+    border: solid 4px #ecf0f1;
+}
+
+.floodit-game-over-content {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    background-color: rgba(30, 144, 255, 0.3);
+
+    transition: all 0.4s ease-in;
+}
+
+.floodit-game-over-content-focus {
+    top: 0;
+    background-color: rgba(30, 144, 255, 0.75);
+}
+
+.floodit-game-over-wrapper {
+    display: block;
+    position: absolute;
+    padding: 0;
+    top: 200%;
+    left: 50%;
+    height: 180px;
+    width: 360px;
+    margin: -90px auto auto -185px;
+
+    transition: all 0.5s ease-out;
+}
+
+.floodit-game-over-wrapper-focus {
+    top: 50%;
+}
+
+#floodit-game-over-dialog {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #1e90ff;
+    border: solid 5px #ffffff;
+    color: #ffffff;
+    font-size: 18pt;
+    border-radius: 5px;
+}
+
+#floodit-game-over-dialog-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
