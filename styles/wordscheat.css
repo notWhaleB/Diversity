@@ -1,0 +1,58 @@
+html, body {
+    background-color: #ffffff;
+}
+
+button {
+    cursor: pointer;
+}
+
+.header {
+    background-color: #2a272a;
+}
+
+#wordscheat-input {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    outline-color: #2a272a;
+    text-align: center;
+    font-size: 18pt;
+    padding: 0;
+}
+
+#wordscheat-wrapper {
+    position: absolute;
+    text-align: center;
+    font-size: 18pt;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    height: 600px;
+    width: 550px;
+    margin: -300px auto auto -275px;
+}
+
+#wordscheat-button {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    background-color: #2a272a;
+    color: #ffffff;
+    border: 3px solid #2a272a;
+
+    height: 55px;
+    width: 100px;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 18pt;
+}
+
+#wordscheat-button:hover {
+    background-color: #ffffff;
+    color: #2a272a;
+}
+
+#wordscheat-results {
+    margin-top: 50px;
+}
