@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 });
 
-function foo() {
+function get_results() {
     var string = $("#wordscheat-input").val();
     $.getJSON("http://serv.begishev.me", string)
         .done(function(json) {
