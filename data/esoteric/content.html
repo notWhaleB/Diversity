@@ -1,0 +1,92 @@
+<div id="esoteric-content" class="content">
+    <div class="esoteric-left-area">
+        <div class="esoteric-text-editor">
+            <label class="esoteric-label esoteric-label-up esoteric-animated" id="esoteric-editor-label">TEXT EDITOR</label>
+            <textarea class="esoteric-textarea esoteric-animated" id="esoteric-editor" cols="48" rows="5"></textarea> <br>
+            <div id="esoteric-button-wrapper">
+                <button class="esoteric-button esoteric-animated" id="esoteric-run-button" onclick="diversity.apps[DIVERSITY_APP_ESOTERIC].run()">Run</button>
+                <button class="esoteric-button esoteric-animated" id="esoteric-pause-button" onclick="diversity.apps[DIVERSITY_APP_ESOTERIC].pause()">Pause</button>
+                <button class="esoteric-button esoteric-animated" id="esoteric-stop-button" onclick="diversity.apps[DIVERSITY_APP_ESOTERIC].stop()">Stop</button>
+            </div>
+            <br><br>
+        </div>
+        <div class="esoteric-input">
+            <label class="esoteric-label esoteric-label-up esoteric-label-disabled esoteric-animated" id="esoteric-read-data-label">READ DATA</label>
+            <textarea class="esoteric-textarea esoteric-animated" id="esoteric-read-data" cols="48" rows="3" contenteditable="esoteric-false" readonly disabled></textarea>
+            <textarea class="esoteric-textarea esoteric-animated" id="esoteric-buffer-data" cols="48" rows="3"></textarea>
+            <label class="esoteric-label esoteric-label-down esoteric-animated" id="esoteric-buffer-data-label">INPUT BUFFER</label>
+        </div>
+        <br>
+        <div class="esoteric-output">
+            <label class="esoteric-label esoteric-label-up esoteric-label-disabled esoteric-animated" id="esoteric-output-window-label">OUTPUT</label>
+            <textarea id="esoteric-output-window" class="esoteric-textarea" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
+        </div>
+    </div>
+    <div class="esoteric-right-area">
+        <div class="esoteric-selectors-wrapper">
+            <h3 class="esoteric-h3">Language</h3>
+            <select id="esoteric-language-selector" class="esoteric-select" data-toggle="select">
+                <option value="BRAINFUCK">Brainfuck</option>
+                <option value="HQ9PLUS">HQ9+</option>
+                <option value="OOK">Ook!</option>
+            </select>
+        </div>
+        <div class="esoteric-selectors-wrapper">
+            <h3 class="esoteric-h3"> Interpreter mode </h3>
+            <select id="esoteric-interpreter-mode" class="esoteric-select" data-toggle="select">
+                <option value="NORMAL">Normal</option>
+                <option value="DEBUG">Debug</option>
+            </select>
+        </div>
+        <div class="esoteric-selectors-wrapper">
+            <h3 class="esoteric-h3">End of buffer action</h3>
+            <select id="esoteric-eob-action-selector" class="esoteric-select" data-toggle="select">
+                <option value="EOF">Send EOF</option>
+                <option value="PAUSE">Pause</option>
+            </select>
+        </div>
+        <br><br>
+        <div id="esoteric-table-wrapper">
+            <h3 class="esoteric-h3">Debug</h3>
+            <label class="esoteric-label esoteric-label-up esoteric-label-disabled esoteric-animated" id="esoteric-values0-label">VALUES TABLE</label>
+            <table id="esoteric-values0" class="esoteric-table">
+                <tr class="esoteric-tr">
+                    <td class="esoteric-td">Pos</td>
+                    <td id="esoteric-move-pos-left" class="esoteric-td" rowspan="3" onclick="diversity.apps[DIVERSITY_APP_ESOTERIC].interpreter_command(diversity.apps[DIVERSITY_APP_ESOTERIC].POS_MOVE_LEFT)"> < </td>
+                    <td id="esoteric-pos0" class="esoteric-td"></td>
+                    <td id="esoteric-pos1" class="esoteric-td"></td>
+                    <td id="esoteric-pos2" class="esoteric-td"></td>
+                    <td id="esoteric-pos3" class="esoteric-td"></td>
+                    <td id="esoteric-pos4" class="esoteric-td"></td>
+                    <td id="esoteric-pos5" class="esoteric-td"></td>
+                    <td id="esoteric-pos6" class="esoteric-td"></td>
+                    <td id="esoteric-move-pos-right" class="esoteric-td" rowspan="3" onclick="diversity.apps[DIVERSITY_APP_ESOTERIC].interpreter_command(diversity.apps[DIVERSITY_APP_ESOTERIC].POS_MOVE_RIGHT)"> > </td>
+                </tr>
+                <tr class="esoteric-tr">
+                    <td class="esoteric-td">Dec</td>
+                    <td id="esoteric-dec0" class="esoteric-td"></td>
+                    <td id="esoteric-dec1" class="esoteric-td"></td>
+                    <td id="esoteric-dec2" class="esoteric-td"></td>
+                    <td id="esoteric-dec3" class="esoteric-td"></td>
+                    <td id="esoteric-dec4" class="esoteric-td"></td>
+                    <td id="esoteric-dec5" class="esoteric-td"></td>
+                    <td id="esoteric-dec6" class="esoteric-td"></td>
+                </tr>
+                <tr class="esoteric-tr">
+                    <td class="esoteric-td">Chr</td>
+                    <td id="esoteric-chr0" class="esoteric-td"></td>
+                    <td id="esoteric-chr1" class="esoteric-td"></td>
+                    <td id="esoteric-chr2" class="esoteric-td"></td>
+                    <td id="esoteric-chr3" class="esoteric-td"></td>
+                    <td id="esoteric-chr4" class="esoteric-td"></td>
+                    <td id="esoteric-chr5" class="esoteric-td"></td>
+                    <td id="esoteric-chr6" class="esoteric-td"></td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+        <label class="esoteric-label esoteric-label-up esoteric-label-disabled" id="esoteric-debug-log-label">DEBUG LOG</label>
+        <textarea id="esoteric-debug-log" class="esoteric-textarea" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
+    </div>
+</div>

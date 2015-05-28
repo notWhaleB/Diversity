@@ -1,12 +1,14 @@
-html, body {
-    background-color: #ffffff;
-}
-
-button {
+.wordscheat-button {
     cursor: pointer;
 }
 
-.header {
+#wordscheat-content {
+    background-color: #ffffff;
+    min-width: 800px;
+    min-height: 600px;
+}
+
+.wordscheat-header {
     background-color: #2a272a;
 }
 
@@ -25,7 +27,7 @@ button {
     position: absolute;
     text-align: center;
     font-size: 18pt;
-    padding: 0;
+    padding: 30px 0;
     top: 50%;
     left: 50%;
     height: 600px;

@@ -1,23 +1,24 @@
-.header {
+.tactris-header {
     background-color: #8e44ad;
-    min-width: 800px;
 }
 
-html, body {
+#tactris-content {
     background-color: #34495e;
+    color: #ffffff;
+
     min-width: 800px;
-    min-height: 800px;
+    min-height: 600px;
 }
 
-.fast-transition {
+.tactris-fast-transition {
     transition: all 0.1s ease 0s;
 }
 
-.slow-transition {
+.tactris-slow-transition {
     transition: all 0.5s ease 0s;
 }
 
-.label {
+.tactris-label {
     font-size: 16px;
     height: 20px;
     line-height: 20px;
@@ -26,7 +27,7 @@ html, body {
     text-align: center;
 }
 
-.content {
+.tactris-content {
     background-color: #34495e;
     color: #ecf0f1;
     width: 100%;
@@ -34,7 +35,7 @@ html, body {
     vertical-align: middle;
 }
 
-.cell {
+.tactris-cell {
     width: 50px;
     height: 50px;
     margin: 0;
@@ -43,7 +44,7 @@ html, body {
     background-color: #2c3e50;
 }
 
-.preview-cell {
+.tactris-preview-cell {
     width: 30px;
     height: 30px;
     margin: 0;
@@ -53,35 +54,41 @@ html, body {
     transition: background 0.5s ease 0s;
 }
 
-.preview-cell-enabled {
+.tactris-cur-preview-cell-enabled {
     background-color: #ecf0f1;
 }
 
-.preview-cell-disabled {
+.tactris-cur-preview-cell-disabled {
     background-color: #2c3e50;
 }
 
-.cell-free {
+.tactris-next-preview-cell-enabled {
+    background-color: #506477;
+}
+
+.tactris-next-preview-cell-disabled {
     background-color: #2c3e50;
 }
 
-.cell-free-hover {
+.tactris-cell-free {
+    background-color: #2c3e50;
+}
+
+.tactris-cell-free-hover {
     background-color: #ecf0f1;
-
     box-shadow: 0 0 16px #ecf0f1;
 }
 
-.cell-selected {
+.tactris-cell-selected {
     background-color: #9b59b6;
-
     box-shadow: 0 0 16px #9b59b6;
 }
 
-.cell-occupied {
+.tactris-cell-occupied {
     background-color: #8e44ad;
 }
 
-.shape-preview {
+.tactris-shape-preview {
     position: relative;
     border: solid 2px #8e44ad;
     padding: 0;
@@ -92,10 +99,9 @@ html, body {
     width: 134px;
 }
 
-#gamefield-wrapper {
+#tactris-gamefield-wrapper {
     background-color: #34495e;
     position: absolute;
-    /*border: solid 5px #ffffff;*/
     padding: 0;
     top: 50%;
     left: 50%;
@@ -104,32 +110,34 @@ html, body {
     margin: -300px auto auto -370px;
 }
 
-#score-panel {
+
+#tactris-score-panel {
     position: relative;
-    /*border: solid 5px red;*/
     text-align: center;
     line-height: 50px;
     font-size: 24pt;
     width: 537px;
-    height: 70px;
+    padding-top: 20px;
+    height: 50px;
+}
+#tactris-score-panel:before {
+    content: "Score: ";
 }
 
-#right-panel {
+#tactris-right-panel {
     padding-top: 10px;
     position: relative;
-    /*border: solid 5px yellow;*/
     width: 180px;
     height: 520px;
     float: right;
 }
 
-#gamefield {
+#tactris-gamefield {
     position: relative;
     border: solid 5px #8e44ad;
     border-radius: 5px;
     padding: 0;
     display-model: box;
-
     height: 500px;
     width: 540px;
     float: left;

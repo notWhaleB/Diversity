@@ -1,0 +1,340 @@
+[disabled="disabled"] {color: #ffffff;!important;}
+input[disabled] {color: #ffffff;!important;}
+textarea[disabled] {color: #ffffff;!important;}
+
+
+.esoteric-h3 {
+    font-size: 12pt;
+    padding: 0;
+    margin: 5px 0 5px 0;
+}
+
+.esoteric-textarea {
+    margin: 20px 0 0 0;
+    background-color: #1abc9c;
+    outline: none;
+    color: #ffffff;
+    font-size: 12pt;
+    border: 5px #16a085 solid;
+    max-width: calc(100% - 20px);
+    -webkit-text-fill-color: #ffffff;
+    display: block;
+    height: 50px;
+}
+
+.esoteric-textarea:disabled {
+    color: #ffffff;
+    background-color: #95a5a6;
+    border: 5px #7f8c8d solid;
+    -webkit-text-fill-color: #ffffff;
+}
+
+#esoteric-button-wrapper {
+    width: auto;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.esoteric-button {
+    position: relative;
+    float: left;
+    background-color: transparent;
+    color: #16a085;
+    outline: none;
+    font-size: 12pt;
+    border: 3px #16a085 solid;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.esoteric-button:disabled {
+    color: #7f8c8d;
+    border-color: #7f8c8d;
+}
+
+.esoteric-button:hover:enabled {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+
+.esoteric-select {
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px'\
+     height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+    background-color: #1abc9c;
+    background-repeat:no-repeat;
+    background-position: right 7px top 7px;
+    background-size: 16px 16px;
+    color:#ffffff;
+    padding: 7px 25px 7px 7px;
+    width: auto;
+    font-size: 12pt;
+    min-width: 150px;
+
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 3px #16a085 solid;
+    border-radius: 3px;
+    outline: 0;
+}
+
+
+
+/* Animation */
+.esoteric-animated {
+    transition: border-color 0.16s ease-out,
+    background-color 0.16s ease-out,
+    color 0.16s ease-out;
+}
+.esoteric-animated:after {
+    transition: border-color 0.16s ease-out,
+    background 0.16s ease-out,
+    color 0.16s ease-out;
+}
+.esoteric-animated:before {
+    transition: border-color 0.16s ease-out,
+    background 0.16s ease-out,
+    color 0.16s ease-out;
+}
+
+.esoteric-header {
+    background-color: #16a085;
+}
+
+#esoteric-content {
+    color: #7f8c8d;
+    background-color: #ecf0f1;
+    display: block;
+    font-size: 14pt;
+    
+    min-width: 800px;
+    min-height: 600px;
+}
+
+.esoteric-left-area {
+    position: absolute;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    left: 0;
+    width: 50%;
+    height: auto;
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+}
+
+.esoteric-right-area {
+    position: absolute;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    right: 0;
+    width: 50%;
+    height: auto;
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+}
+
+.esoteric-text-editor {
+    height: 50%;
+    display: inline;
+}
+
+.esoteric-input {
+    display: inline;
+}
+
+.esoteric-output {
+}
+
+#esoteric-editor {
+    min-height: 100px;
+    height: 100px;
+}
+
+.esoteric-input-form {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    background-color: #1abc9c;
+}
+
+.esoteric-label {
+    position: absolute;
+    padding-left: 5px;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    height: 0;
+    width: auto;
+}
+
+
+.esoteric-label-up {
+    display: block;
+    line-height: 22px;
+    float: left;
+    background-color: #16a085;
+    height: 20px;
+    width: auto;
+}
+
+.esoteric-label-up:after {
+    position: absolute;
+    float: right;
+    content: "";
+    border-bottom: 20px solid #16a085;
+    border-right: 20px solid transparent;
+}
+
+.esoteric-label-down {
+    display: block;
+    float: left;
+    background-color: #16a085;
+    height: 20px;
+    width: auto;
+}
+
+.esoteric-label-down:after {
+    position: absolute;
+    float: right;
+    content: "";
+    border-top: 20px solid #16a085;
+    border-right: 20px solid transparent;
+}
+
+.esoteric-label-disabled {
+    background-color: #7f8c8d;
+}
+
+.esoteric-label-disabled:after {
+    border-top-color: #7f8c8d;
+    border-bottom-color: #7f8c8d;
+}
+
+.esoteric-selectors-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+
+#esoteric-move-pos-left, #esoteric-move-pos-right {
+    cursor: pointer;
+    transition: none;
+}
+
+#esoteric-move-pos-left:active {
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+}
+
+#esoteric-move-pos-right:active {
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+}
+
+#esoteric-language-selector {
+    padding-left: 10px;
+}
+
+
+#esoteric-eob-action-selector {
+    padding-left: 10px;
+}
+
+#esoteric-read-data {
+    margin-bottom: 2px;
+    padding-bottom: 0;
+    color: #7f8c8d;
+}
+
+#esoteric-buffer-data {
+    margin-top: -2px;
+    padding-top: 0;
+}
+
+#esoteric-run-button {
+    width: 100px;
+    height: 50px;
+}
+
+#esoteric-pause-button {
+    width: 100px;
+    height: 50px;
+}
+
+#esoteric-stop-button {
+    width: 100px;
+    height: 50px;
+}
+
+.esoteric-output {
+    padding-top: 30px;
+    height: 30%;
+}
+
+#esoteric-table-wrapper {
+    width: 100%;
+    margin-bottom: 50px;
+    height: 100px;
+}
+
+#esoteric-debug-log {
+    width: auto;
+    max-width: 95%;
+    min-height: 100px;
+    height: 100px;
+}
+
+.esoteric-table {
+    position: absolute;
+    left: 10px;
+    color: #ffffff;
+    background-color: #1abc9c;
+    border: 3px #16a085 solid;
+    /*padding: 5px;*/
+    border-collapse: collapse;
+    margin-top: 18px;
+    display: inline-block;
+
+    transition: border-color 0.16s ease-out,
+    background-color 0.16s ease-out,
+    color 0.16s ease-out;
+}
+
+.esoteric-tr {
+    border: 2px #16a085 solid;
+    padding: 5px;
+
+    transition: border-color 0.16s ease-out,
+    background-color 0.16s ease-out,
+    color 0.16s ease-out;
+}
+
+.esoteric-td {
+    border: 2px #16a085 solid;
+    font-size: 12pt;
+    text-align: center;
+    min-width: 20px;
+    padding: 5px;
+
+    transition: border-color 0.16s ease-out,
+    background-color 0.16s ease-out,
+    color 0.16s ease-out;
+}
+
+
+.esoteric-table-disabled {
+    background-color: #95a5a6;
+    border: 3px #7f8c8d solid;
+}
+.esoteric-trtd-disabled {
+    background-color: #95a5a6;
+    border: 2px #7f8c8d solid;
+}
+
+

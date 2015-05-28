@@ -1,0 +1,158 @@
+#map-content {
+    display: table;
+    position: absolute;
+    min-height: 0;
+    min-width: 0;
+    width: calc((100vw + 10px) * 3);
+    height: calc((100vh + 10px) * 3);
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.map-cell {
+    position: absolute;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    border: solid 3px #808080;
+
+    text-align: center;
+    line-height: 100vh;
+    font-size: 72pt;
+}
+
+#map-cell-0 {
+    margin-left: 100vw;
+    margin-top: 100vh;
+}
+
+#map-cell-1 {
+    margin-left: 200vw;
+    margin-top: 100vh;
+}
+
+#map-cell-2 {
+    margin-left: 200vw;
+    margin-top: 200vh;
+}
+
+#map-cell-3 {
+    margin-left: 100vw;
+    margin-top: 200vh;
+}
+
+#map-cell-4 {
+    margin-left: 0;
+    margin-top: 200vh;
+}
+
+#map-cell-5 {
+    margin-left: 0;
+    margin-top: 100vh;
+}
+
+#map-cell-6 {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#map-cell-7 {
+    margin-left: 100vw;
+    margin-top: 0;
+}
+
+#map-cell-8 {
+    margin-left: 200vw;
+    margin-top: 0;
+}
+
+.map-button {
+    margin: auto;
+    width: 35px;
+    height: 30px;
+    display: inline-block;
+    float: right;
+    background-color: inherit;
+}
+
+#map-icon:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.map-icon {
+    fill: #ffffff;
+    background-color: inherit;
+}
+
+.map-panel-resume, .map-panel-load {
+    top: 0;
+    position: absolute;
+    min-width: 800px;
+    min-height: 600px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(14, 47, 79, 0.42);
+    cursor: pointer;
+}
+
+.map-panel-resume:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin: -100px auto auto -100px;
+
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-left: 200px solid #ffffff;
+    border-bottom: 100px solid transparent;
+
+    opacity: 0;
+}
+
+.map-panel-resume:hover:after, .map-panel-load:hover:before, .map-panel-load:hover:after {
+    opacity: 1;
+}
+
+.map-panel-load:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin: -60px auto auto -35px;
+
+    width: 70px;
+    height: 120px;
+    background-color: #ffffff;
+
+    opacity: 0;
+}
+
+.map-panel-load:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin: 0 auto auto -100px;
+
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid #ffffff;
+
+    opacity: 0;
+}
+
+#map-content {
+    overflow: hidden;
+}

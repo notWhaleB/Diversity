@@ -4,111 +4,11 @@
     <meta charset='utf-8'>
     <meta name="description" content="Diversity : Various unrelated web-apps">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/esoteric.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/map.css">
     <script type="text/javascript" src="scripts/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="scripts/esoteric.js"></script>
-    <script type="text/javascript" src="scripts/esoteric-brainfuck.js"></script>
-    <script type="text/javascript" src="scripts/esoteric-ook.js"></script>
-    <script type="text/javascript" src="scripts/esoteric-hq9plus.js"></script>
-    <title>Brainfuck interpreter</title>
+    <script type="text/javascript" src="scripts/general.js"></script>
+    <script type="text/javascript" src="data/esoteric/run.js"></script>
+    <title>Esoteric</title>
 </head>
-<body>
-<div class="header">
-    <div class="map_button">
-        <img src="img/map.png">
-    </div>
-    <div class="title">
-        Esoteric languages interpreter
-    </div>
-</div>
-<div class="content">
-    <div class="left_area">
-        <div class="text_editor">
-            <label class="label_up animated" id="editor_label">TEXT EDITOR</label>
-            <textarea class="animated" id="editor" cols="48" rows="10"></textarea> <br>
-            <button class="animated" id="run_button" onclick="run()">Run</button>
-            <button class="animated" id="pause_button" onclick="pause()">Pause</button>
-            <button class="animated" id="stop_button" onclick="stop()">Stop</button>
-            <br><br>
-        </div>
-        <div class="input">
-            <label class="label_up label_disabled animated" id="read_data_label">READ DATA</label>
-            <textarea class="animated" id="read_data" cols="48" rows="3" contenteditable="false" readonly disabled></textarea>
-            <textarea class="animated" id="buffer_data" cols="48" rows="3"></textarea>
-            <label class="label_down animated" id="buffer_data_label">INPUT BUFFER</label>
-        </div>
-        <br>
-        <div class="output">
-            <label class="label_up label_disabled animated" id="output_window_label">OUTPUT</label>
-            <textarea id="output_window" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
-        </div>
-    </div>
-    <div class="right_area">
-        <div class="selectors_wrapper">
-            <h3>Language</h3>
-            <select id="language_selector" data-toggle="select">
-                <option value="BRAINFUCK">Brainfuck</option>
-                <option value="1" disabled>Moo</option>
-                <option value="HQ9PLUS">HQ9+</option>
-                <option value="3" disabled>Petooh</option>
-                <option value="OOK">Ook!</option>
-            </select>
-        </div>
-        <div class="selectors_wrapper">
-            <h3> Interpreter mode </h3>
-            <select id="interpreter_mode" data-toggle="select">
-                <option value="NORMAL">Normal</option>
-                <option value="DEBUG">Debug</option>
-            </select>
-        </div>
-        <div class="selectors_wrapper">
-            <h3>End of buffer action</h3>
-            <select id="eob_action_selector" data-toggle="select">
-                <option value="EOF">Send EOF</option>
-                <option value="PAUSE">Pause</option>
-            </select>
-        </div>
-        <br><br>
-        <h3>Debug</h3>
-        <label class="label_up label_disabled animated" id="values0_label">VALUES TABLE</label>
-        <table id="values0">
-            <tr>
-                <td>Pos</td>
-                <td id="move_pos_left" rowspan="3" onclick="interpreter_command(POS_MOVE_LEFT)"> < </td>
-                <td id="pos0"></td>
-                <td id="pos1"></td>
-                <td id="pos2"></td>
-                <td id="pos3"></td>
-                <td id="pos4"></td>
-                <td id="pos5"></td>
-                <td id="pos6"></td>
-                <td id="move_pos_right" rowspan="3" onclick="interpreter_command(POS_MOVE_RIGHT)"> > </td>
-            </tr>
-            <tr>
-                <td>Dec</td>
-                <td id="dec0"></td>
-                <td id="dec1"></td>
-                <td id="dec2"></td>
-                <td id="dec3"></td>
-                <td id="dec4"></td>
-                <td id="dec5"></td>
-                <td id="dec6"></td>
-            </tr>
-            <tr>
-                <td>Chr</td>
-                <td id="chr0"></td>
-                <td id="chr1"></td>
-                <td id="chr2"></td>
-                <td id="chr3"></td>
-                <td id="chr4"></td>
-                <td id="chr5"></td>
-                <td id="chr6"></td>
-            </tr>
-        </table>
-        <br><br>
-        <label class="label_up label_disabled" id="debug_log_label">DEBUG LOG</label>
-        <textarea id="debug_log" cols="48" rows="10" contenteditable="false" readonly disabled></textarea>
-    </div>
-</div>
-</body>
+<body></body>
 </html>
