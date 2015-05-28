@@ -4,6 +4,9 @@
 
 #beehive-content {
     background-color: #f1cf12;
+
+    min-width: 800px;
+    min-height: 600px;
 }
 
 #beehive-gamefield-wrapper {
