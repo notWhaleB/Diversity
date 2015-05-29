@@ -9,6 +9,10 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+    -ms-overflow-y: hidden;
+    -o-overflow-y: hidden;
+    -moz-overflow-y: hidden;
+    -webkit-overflow-y: hidden;
 }
 
 .map-cell {
@@ -19,12 +23,35 @@
     padding: 0;
     margin: 0;
     overflow: auto;
+    -ms-overflow-y: auto;
+    -o-overflow-y: auto;
+    -moz-overflow-y: auto;
+    -webkit-overflow-y: auto;
     border: solid 3px #808080;
 
     text-align: center;
-    line-height: 100vh;
-    font-size: 72pt;
 }
+
+.map-cell:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em
+}
+
+.map-h1 {
+    font-size: 96pt;
+    padding-bottom: 10px;
+}
+
+.map-cell-description {
+    display: inline-block;
+    vertical-align: middle;
+    width: 700px;
+    font-size: 48pt;
+}
+
 
 #map-cell-0 {
     margin-left: 100vw;
@@ -82,6 +109,10 @@
 
 #map-icon:hover {
     transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
 }
 
 .map-icon {
@@ -155,4 +186,8 @@
 
 #map-content {
     overflow: hidden;
+    -ms-overflow-y: hidden;
+    -o-overflow-y: hidden;
+    -moz-overflow-y: hidden;
+    -webkit-overflow-y: hidden;
 }

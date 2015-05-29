@@ -121,7 +121,12 @@ textarea[disabled] {color: #ffffff;!important;}
     width: 50%;
     height: auto;
     max-height: calc(100vh - 50px);
+    min-height: 550px
     overflow-y: scroll;
+    -ms-overflow-y: scroll;
+    -o-overflow-y: scroll;
+    -moz-overflow-y: scroll;
+    -webkit-overflow-y: scroll;
 }
 
 .esoteric-right-area {
@@ -134,7 +139,12 @@ textarea[disabled] {color: #ffffff;!important;}
     width: 50%;
     height: auto;
     max-height: calc(100vh - 50px);
+    min-height: 550px
     overflow-y: scroll;
+    -ms-overflow-y: scroll;
+    -o-overflow-y: scroll;
+    -moz-overflow-y: scroll;
+    -webkit-overflow-y: scroll;
 }
 
 .esoteric-text-editor {

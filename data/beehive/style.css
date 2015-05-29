@@ -19,6 +19,15 @@
     margin: -300px auto auto -370px;
 }
 
+#beehive-tip {
+    color: #808080;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: -30px;
+    text-align: center;
+}
+
 .beehive-block {
     line-height: 45px;
     text-align: center;

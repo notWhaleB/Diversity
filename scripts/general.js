@@ -3,6 +3,12 @@ var DIVERSITY_APP_HOME = 0, DIVERSITY_APP_ESOTERIC = 1, DIVERSITY_APP_WORDSCHEAT
     DIVERSITY_APP_EIGHT = 8;
 var diversity;
 
+$.fn.preload = function() {
+    this.each(function() {
+        (new Image()).src = this;
+    });
+};
+
 function Diversity() {
     this.app_loaded = [];
     this.apps = [];
@@ -78,12 +84,20 @@ function Diversity() {
             this.map_content.css("transition", "all 1s ease");
             setTimeout(function () {
                 diversity.map_content.css("transform", diversity.apps[id].transform);
+                diversity.map_content.css("msTransform", diversity.apps[id].transform);
+                diversity.map_content.css("oTransform", diversity.apps[id].transform);
+                diversity.map_content.css("mozTransform", diversity.apps[id].transform);
+                diversity.map_content.css("webkittransform", diversity.apps[id].transform);
                 setTimeout(function () {
                     diversity.map_content.css("transition", "none");
                 }, 1000);
             }, 0);
         } else {
             diversity.map_content.css("transform", diversity.apps[id].transform);
+            diversity.map_content.css("msTransform", diversity.apps[id].transform);
+            diversity.map_content.css("oTransform", diversity.apps[id].transform);
+            diversity.map_content.css("mozTransform", diversity.apps[id].transform);
+            diversity.map_content.css("webkittransform", diversity.apps[id].transform);
         }
         $(".map-panel-resume").remove();
         $(".map-panel-load").remove();

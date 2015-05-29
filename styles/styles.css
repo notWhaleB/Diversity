@@ -7,7 +7,14 @@ body {
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
     overflow: hidden;
+    -ms-overflow-y: hidden;
+    -o-overflow-y: hidden;
+    -moz-overflow-y: hidden;
+    -webkit-overflow-y: hidden;
     opacity: 0;
+
+    height: 100%;
+    width: 100%;
 }
 
 button {

@@ -24,6 +24,8 @@ function AppBeehive() {
                             this.blocks[this.field[k]]++;
                             if (this.blocks[this.field[k]] == 10) {
                                 this.spawn_num = 1;
+                            } else if (this.blocks[this.field[k]] == 5) {
+                                $("#beehive-tip").remove();
                             }
                             this.blocks_DOM[this.field[k]].addClass("beehive-block-value-" + this.blocks[this.field[k]]);
                             this.field[k] = 0;
@@ -78,6 +80,10 @@ function AppBeehive() {
                 }
             }
         });
+
+        document.onmousedown = function() {
+          console.log("Mouse down");
+        };
     };
 
     this.set_cells_positions = function() {
@@ -150,6 +156,23 @@ function AppBeehive() {
     };
 
     this.init = function() {
+        $(function() {
+            var images = ["data/beehive/img/bee.png",
+                "data/beehive/img/beequeen&drone.png",
+                "data/beehive/img/beequeen.png",
+                "data/beehive/img/beex2.png",
+                "data/beehive/img/beex4.png",
+                "data/beehive/img/cells3.png",
+                "data/beehive/img/cells3x3.png",
+                "data/beehive/img/flower155.png",
+                "data/beehive/img/hexagon7.png",
+                "data/beehive/img/water86.png",
+                "data/beehive/img/water86x2.png",
+                "data/beehive/img/water86x4.png"];
+
+            $(images).preload();
+        });
+
         setTimeout(function() {
             diversity.apps[DIVERSITY_APP_BEEHIVE].set_cells_positions();
         }, 100);
