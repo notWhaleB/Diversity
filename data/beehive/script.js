@@ -187,6 +187,6 @@ function AppBeehive() {
         this.ready = true;
     };
 
-    this.transform = "translate(calc(-100vw), 0)";
+    this.transform = "translate(-100vw, 0)";
     this.html_path = "beehive.html";
 }

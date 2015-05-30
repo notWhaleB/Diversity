@@ -27,6 +27,6 @@ function AppHome() {
         }, 100);
     };
 
-    this.transform = "translate(calc(-100vw), calc(-100vh))";
+    this.transform = "translate(-100vw, -100vh)";
     this.html_path = "index.html";
 }

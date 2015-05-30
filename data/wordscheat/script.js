@@ -22,6 +22,6 @@ function AppWordscheat() {
         $("title").html("Wordscheat");
     };
 
-    this.transform = "translate(calc(-200vw), calc(-200vh))";
+    this.transform = "translate(-200vw, -200vh)";
     this.html_path = "wordscheat.html";
 }
