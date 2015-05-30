@@ -19,13 +19,31 @@ function Diversity() {
     this.classes = ["AppHome", "AppEsoteric", "AppWordscheat", "", "", "AppTactris", "AppFloodit", "AppBeehive"];
     this.checker_interval = undefined;
 
-    this.load_js = function(path) {
+    this.load_js = function(id) {
+        var path = this.path[id] + "script.js";
+        var loading = new $.Deferred();
+        var self = this;
+
+        var INTERVAL = 200;
+        var check;
+
         var ref = document.createElement('script');
         ref.setAttribute("type","text/javascript");
         ref.setAttribute("src", path);
-        if (typeof ref != "undefined")
-            document.head.appendChild(ref);
 
+        if (typeof ref != "undefined") {
+            document.head.appendChild(ref);
+            check = setInterval(function () {
+                if (typeof window[self.classes[id]] !== 'undefined') {
+                    clearInterval(check);
+                    loading.resolve();
+                }
+            }, INTERVAL)
+        } else {
+            loading.reject();
+        }
+
+        return loading.promise();
     };
 
     this.load_css = function(path) {
@@ -52,11 +70,10 @@ function Diversity() {
     };
 
     this.load_header = function() {
-        $.ajax({
-            url: "data/header.html",
-            success: function(data) {
-                $("body").append(data);
-            }
+        return $.ajax({
+            url: "data/header.html"
+        }).done(function (data) {
+            $("body").append(data);
         });
     };
 
@@ -114,39 +131,33 @@ function Diversity() {
         }
 
         this.load_css(this.path[id] + "style.css");
-        this.load_js(this.path[id] + "script.js");
-
-        this.checker_interval = setInterval(function() {
-            if ($("link[href='" + diversity.path[id] + "style.css']").length != 0 &&
-                $("script[src='" + diversity.path[id] + "script.js']").length != 0 &&
-                (typeof eval("window." + diversity.classes[id])) != "undefined") {
-                clearInterval(diversity.checker_interval);
-                $("#map-cell-" + id).html("");
-                diversity.load_app(id, animate);
-            }
-        }, 200);
+        this.load_js(id)
+            .then(function () {
+                diversity.checker_interval = setInterval(function() {
+                    if ($("link[href='" + diversity.path[id] + "style.css']").length != 0) {
+                        clearInterval(diversity.checker_interval);
+                        $("#map-cell-" + id).html("");
+                        diversity.load_app(id, animate);
+                    }
+                }, 200);
+            });
     };
 
     this.load_map = function(entry_point) {
         if (this.map_loaded) return;
         $.ajax({
-            url: "data/map/content.html",
-            success: function(data) {
-                $("body").append(data);
-                diversity.map_content = $("#map-content");
+            url: "data/map/content.html"
+        }).done(function(data) {
+            $("body").append(data);
+            diversity.map_content = $("#map-content");
 
-                for (var i = 0; i != 9; ++i) {
-                    diversity.app_loaded[i] = false;
-                }
-                diversity.map_loaded = true;
-                diversity.load_header();
-                diversity.checker_interval = setInterval(function() {
-                    if ($("#header").length != 0) {
-                        clearInterval(diversity.checker_interval);
-                        diversity.run_app(entry_point, false);
-                    }
-                }, 200);
+            for (var i = 0; i != 9; ++i) {
+                diversity.app_loaded[i] = false;
             }
+            diversity.map_loaded = true;
+            diversity.load_header().then(function () {
+                diversity.run_app(entry_point, false);
+            });
         });
     };
 
