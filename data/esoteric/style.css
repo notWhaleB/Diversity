@@ -1,7 +1,6 @@
-[disabled="disabled"] {color: #ffffff;!important;}
-input[disabled] {color: #ffffff;!important;}
-textarea[disabled] {color: #ffffff;!important;}
-
+[disabled="disabled"] {color: #ffffff !important;}
+input[disabled] {color: #ffffff !important;}
+textarea[disabled] {color: #ffffff !important;}
 
 .esoteric-h3 {
     font-size: 12pt;
@@ -121,7 +120,7 @@ textarea[disabled] {color: #ffffff;!important;}
     width: 50%;
     height: auto;
     max-height: calc(100vh - 50px);
-    min-height: 550px
+    min-height: 550px;
     overflow-y: scroll;
     -ms-overflow-y: scroll;
     -o-overflow-y: scroll;
@@ -139,7 +138,7 @@ textarea[disabled] {color: #ffffff;!important;}
     width: 50%;
     height: auto;
     max-height: calc(100vh - 50px);
-    min-height: 550px
+    min-height: 550px;
     overflow-y: scroll;
     -ms-overflow-y: scroll;
     -o-overflow-y: scroll;
