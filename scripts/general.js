@@ -1,6 +1,6 @@
 var DIVERSITY_APP_HOME = 0, DIVERSITY_APP_ESOTERIC = 1, DIVERSITY_APP_WORDSCHEAT = 2, DIVERSITY_APP_ABOUT = 3,
     DIVERSITY_APP_FOUR = 4, DIVERSITY_APP_TACTRIS = 5, DIVERSITY_APP_FLOODIT = 6, DIVERSITY_APP_BEEHIVE = 7,
-    DIVERSITY_APP_EIGHT = 8;
+    DIVERSITY_APP_MATRIX = 8;
 var diversity;
 
 $.fn.preload = function() {
@@ -15,8 +15,8 @@ function Diversity() {
     this.map_opened = false;
     this.map_content = undefined;
     this.map_loaded = false;
-    this.path = ["data/home/", "data/esoteric/", "data/wordscheat/", "data/about/", "", "data/tactris/", "data/floodit/", "data/beehive/"];
-    this.classes = ["AppHome", "AppEsoteric", "AppWordscheat", "AppAbout", "", "AppTactris", "AppFloodit", "AppBeehive"];
+    this.path = ["data/home/", "data/esoteric/", "data/wordscheat/", "data/about/", "", "data/tactris/", "data/floodit/", "data/beehive/", "data/matrix/"];
+    this.classes = ["AppHome", "AppEsoteric", "AppWordscheat", "AppAbout", "", "AppTactris", "AppFloodit", "AppBeehive", "AppMatrix"];
     this.checker_interval = undefined;
 
     this.load_js = function(id) {
@@ -125,7 +125,7 @@ function Diversity() {
     };
 
     this.run_app = function(id, animate) {
-        if (id == DIVERSITY_APP_FOUR || id == DIVERSITY_APP_EIGHT) {
+        if (id == DIVERSITY_APP_FOUR) {
             alert("Error: There is no assigned application.");
             return;
         }

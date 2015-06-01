@@ -1,0 +1,13 @@
+.matrix-header {
+    background-color: black;
+    color: #00e000;
+}
+
+#matrix-content {
+    background-color: #000000;
+
+    padding-top: 10px;
+
+    min-height: 600px;
+    min-width: 800px;
+}
