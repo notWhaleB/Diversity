@@ -178,6 +178,10 @@ function AppMatrix() {
         this.context = this.canvas.getContext("2d");
         this.currentTime = new Date();
 
+        addEventListener("resize", function(event) {
+            diversity.apps[DIVERSITY_APP_MATRIX].onResize = true;
+        });
+
         this.timer = setInterval(function() {
             diversity.apps[DIVERSITY_APP_MATRIX].matrix();
         }, 25);
