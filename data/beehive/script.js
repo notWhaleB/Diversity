@@ -80,10 +80,6 @@ function AppBeehive() {
                 }
             }
         });
-
-        document.onmousedown = function() {
-          console.log("Mouse down");
-        };
     };
 
     this.set_cells_positions = function() {
