@@ -71,12 +71,12 @@ function AppBeehive() {
         addEventListener("keypress", function(event) {
             if (diversity.apps[DIVERSITY_APP_BEEHIVE].ready) {
                 switch (event.which) {
-                    case 119: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(0); break;
-                    case 101: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(1); break;
-                    case 100: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(2); break;
-                    case 120: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(3); break;
-                    case 122: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(4); break;
-                    case 97: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(5); break;
+                    case 119: case 1094: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(0); break;
+                    case 101: case 1091: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(1); break;
+                    case 100: case 1074: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(2); break;
+                    case 120: case 1095: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(3); break;
+                    case 122: case 1103: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(4); break;
+                    case 97: case 1092: diversity.apps[DIVERSITY_APP_BEEHIVE].move_blocks(5); break;
                 }
             }
         });
