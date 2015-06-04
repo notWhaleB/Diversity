@@ -1,2 +1,2 @@
-# Web_Begishev
+# Diversity
 Available on http://app.begishev.me 
