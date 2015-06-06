@@ -11,7 +11,13 @@ function AppWordscheat() {
             });
     };
 
-    this.init = function() {};
+    this.init = function() {
+        addEventListener("keydown", function(event) {
+            if (event.which == 13) {
+                diversity.apps[DIVERSITY_APP_WORDSCHEAT].get_results();
+            }
+        })
+    };
 
     this.set_header = function() {
         var _header = $("#header");
