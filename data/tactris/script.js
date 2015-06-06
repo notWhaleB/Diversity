@@ -46,8 +46,6 @@ function AppTactris() {
             }
         }
 
-        this.score_panel = $('#tactris-score-panel');
-
         this.occupied_cells_remover_interval = setInterval(function() {
             diversity.apps[DIVERSITY_APP_TACTRIS].occupied_cells_remover();
         }, 20);
@@ -61,6 +59,8 @@ function AppTactris() {
                 this.cells_states[i * 10 + j] = 0;
                 cur_id = i * 10 + j;
                 this.cells[cur_id] = $("#tactris-cell_" + i + j);
+                this.cells[cur_id].removeClass();
+                this.cells[cur_id].addClass("tactris-cell");
                 this.cells[cur_id].addClass("tactris-cell-free");
                 this.cells[cur_id].addClass("tactris-fast-transition");
             }
@@ -78,6 +78,25 @@ function AppTactris() {
 
         this.current_shapeform_id = this.get_random_int(0, 18);
         this.next_shapeform_id = this.get_random_int(0, 18);
+    };
+
+    this.check_gameover_condition = function() {
+        for (var i = -4; i != 14; ++i) {
+            for (var j = -4; j != 14; ++j) {
+                var match_with_current = true;
+                for (var k = 0; k != 4; ++k) {
+                    var _t_x = i + this.shapeforms_delta[this.current_shapeform_id][k][0];
+                    var _t_y = j + this.shapeforms_delta[this.current_shapeform_id][k][1];
+                    if (_t_x < 0 || _t_x > 9 || _t_y < 0 || _t_y > 9 || this.cells_states[_t_x * 10 + _t_y] != 0) {
+                        match_with_current = false;
+                        break;
+                    }
+                }
+                if (match_with_current) return true;
+            }
+        }
+
+        return false;
     };
 
     this.set_event_listeners = function() {
@@ -130,6 +149,12 @@ function AppTactris() {
                     _app.next_shapeform_id = _app.get_random_int(0, 16);
                     _app.set_current_preview();
                     _app.field_processor();
+                    if (!_app.check_gameover_condition()) {
+                        alert("Game over.");
+                        _app.init_fields();
+                        _app.set_current_preview();
+                        _app.score_panel.html(0);
+                    }
                 } else {
                     _app.selected_cells_remover = setInterval(function() {
                         if (_app.cell_select_calls.length != 0) {
@@ -267,6 +292,7 @@ function AppTactris() {
     //};
 
     this.init = function() {
+        this.score_panel = $('#tactris-score-panel');
         this.init_fields();
         this.set_event_listeners();
         this.load_shapeforms();
