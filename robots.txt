@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /data/
 Disallow: /scripts/
 Disallow: /styles/
+Disallow: /CNAME
+Disallow: /README.md
+Disallow: /yandex_54f13a300de70913.txt
