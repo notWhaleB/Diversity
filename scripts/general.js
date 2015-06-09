@@ -1,5 +1,5 @@
 var DIVERSITY_APP_HOME = 0, DIVERSITY_APP_ESOTERIC = 1, DIVERSITY_APP_WORDSCHEAT = 2, DIVERSITY_APP_ABOUT = 3,
-    DIVERSITY_APP_FOUR = 4, DIVERSITY_APP_TACTRIS = 5, DIVERSITY_APP_FLOODIT = 6, DIVERSITY_APP_BEEHIVE = 7,
+    DIVERSITY_APP_UNITCONVERTER = 4, DIVERSITY_APP_TACTRIS = 5, DIVERSITY_APP_FLOODIT = 6, DIVERSITY_APP_BEEHIVE = 7,
     DIVERSITY_APP_MATRIX = 8;
 var diversity;
 
@@ -15,8 +15,8 @@ function Diversity() {
     this.map_opened = false;
     this.map_content = undefined;
     this.map_loaded = false;
-    this.path = ["data/home/", "data/esoteric/", "data/wordscheat/", "data/about/", "", "data/tactris/", "data/floodit/", "data/beehive/", "data/matrix/"];
-    this.classes = ["AppHome", "AppEsoteric", "AppWordscheat", "AppAbout", "", "AppTactris", "AppFloodit", "AppBeehive", "AppMatrix"];
+    this.path = ["data/home/", "data/esoteric/", "data/wordscheat/", "data/about/", "data/unitconverter/", "data/tactris/", "data/floodit/", "data/beehive/", "data/matrix/"];
+    this.classes = ["AppHome", "AppEsoteric", "AppWordscheat", "AppAbout", "AppUnitconverter", "AppTactris", "AppFloodit", "AppBeehive", "AppMatrix"];
     this.checker_interval = undefined;
 
     this.load_js = function(id) {
@@ -125,11 +125,6 @@ function Diversity() {
     };
 
     this.run_app = function(id, animate) {
-        if (id == DIVERSITY_APP_FOUR) {
-            alert("Error: There is no assigned application.");
-            return;
-        }
-
         this.load_css(this.path[id] + "style.css");
         this.load_js(id)
             .then(function () {

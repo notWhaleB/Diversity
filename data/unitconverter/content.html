@@ -1,0 +1,40 @@
+<div id="unitconverter-content" class="content">
+    <div id="unitconverter-wrapper">
+        <div id="unitconverter-value-select">
+            Convert:
+            <select id="unitconverter-value-selector" class="unitconverter-select" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(1)">
+                <option value="AREA">Area</option>
+                <option value="LENGTH">Length</option>
+                <option value="POWER" disabled>Power</option>
+                <option value="SPEED" disabled>Speed</option>
+                <option value="PRESSURE" disabled>Presure</option>
+                <option value="TEMPERATURE" disabled>Temperature</option>
+                <option value="TIME" disabled>Time</option>
+                <option value="VOLUME" disabled>Volume</option>
+                <option value="WEIGHT" disabled>Weight</option>
+            </select>
+        </div>
+        <div id="unitconverter-values-fields">
+            <div id="unitconverter-value-field-1" class="unitconverter-value-field">
+                <input id="unitconverter-value-1" class="unitconverter-input" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(1)">
+                <select id="unitconverter-unit-selector-1" class="unitconverter-select" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(4)">
+                </select>
+            </div>
+            <div id="unitconverter-value-field-2" class="unitconverter-value-field">
+                <input id="unitconverter-value-2" class="unitconverter-input" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(2)">
+                <select id="unitconverter-unit-selector-2" class="unitconverter-select" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(1)">
+                </select>
+            </div>
+            <div id="unitconverter-value-field-3" class="unitconverter-value-field">
+                <input id="unitconverter-value-3" class="unitconverter-input" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(3)">
+                <select id="unitconverter-unit-selector-3" class="unitconverter-select" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(2)">
+                </select>
+            </div>
+            <div id="unitconverter-value-field-4" class="unitconverter-value-field">
+                <input id="unitconverter-value-4" class="unitconverter-input" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(4)">
+                <select id="unitconverter-unit-selector-4" class="unitconverter-select" onchange="diversity.apps[DIVERSITY_APP_UNITCONVERTER].update_state(3)">
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
