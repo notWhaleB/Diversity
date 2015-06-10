@@ -1,11 +1,12 @@
 function AppUnitconverter() {
-    this.AREA = 0; this.LENGTH = 1;
+    this.AREA = 0; this.LENGTH = 1; this.POWER = 2;
     this.converter_state = -1;
     this.converters = [undefined];
 
     this.init = function() {
         this.converters[this.AREA] = new UnitconverterArea();
         this.converters[this.LENGTH] = new UnitconverterLength();
+        this.converters[this.POWER] = new UnitconverterPower();
         this.update_state(1);
     };
 
@@ -191,6 +192,60 @@ function UnitconverterLength() {
             } break;
             case this.NAMI: {
                 return 0.00054 * value;
+            } break;
+        }
+    };
+
+    this.convert = function(value, source_unit, output_unit) {
+        if ($.isNumeric(value))
+            return this.from_pivot(this.to_pivot(value, source_unit), output_unit);
+    }
+}
+
+function UnitconverterPower() {
+    this.WT = 0; this.KWT = 1; this.MWT = 2; this.HP = 3;
+    this.units = ["WT", "KWT", "MWT", "HP"];
+    this.unit_names = ["Watt", "Kilowatt", "Megawatt", "Horsepower"];
+    // Pivot_unit: WT - watt
+
+    this.options_html = function() {
+        var res = "";
+        for (var i = 0; i != this.units.length; ++i) {
+            res += "<option value='" + this.units[i] + "'>" + this.unit_names[i] + "</option>";
+        }
+        return res;
+    };
+
+    this.to_pivot = function(value, source_unit) {
+        switch (source_unit) {
+            case this.WT: {
+                return value;
+            } break;
+            case this.KWT: {
+                return 1000 * value;
+            } break;
+            case this.MWT: {
+                return 1000000 * value;
+            } break;
+            case this.HP: {
+                return 745.7121 * value;
+            } break;
+        }
+    };
+
+    this.from_pivot = function(value, output_unit) {
+        switch (output_unit) {
+            case this.WT: {
+                return value;
+            } break;
+            case this.KWT: {
+                return 0.001 * value;
+            } break;
+            case this.MWT: {
+                return 0.000001 * value;
+            } break;
+            case this.HP: {
+                return 0.001341 * value;
             } break;
         }
     };
