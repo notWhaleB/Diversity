@@ -1,7 +1,7 @@
 function AppWordscheat() {
     this.get_results = function() {
         var string = $("#wordscheat-input").val();
-        $.getJSON("http://serv.begishev.me", string)
+        $.getJSON("http://serv.begishev.me:7001", string)
             .done(function(json) {
                 var result_html = "";
                 for (var i = 0; i != json.data.length; ++i) {
