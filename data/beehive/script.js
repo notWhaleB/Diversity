@@ -154,7 +154,7 @@ function AppBeehive() {
     this.init = function() {
         $(function() {
             var images = ["data/beehive/img/bee.png",
-                "data/beehive/img/beequeen&drone.png",
+                "data/beehive/img/beequeen_drone.png",
                 "data/beehive/img/beequeen.png",
                 "data/beehive/img/beex2.png",
                 "data/beehive/img/beex4.png",
